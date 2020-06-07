@@ -1,0 +1,19 @@
+Simple dummy code that will help to discuss how to properly create multiple
+flask websites attacking a single database. The idea is serve different content
+with the same underlying code.
+
+Domains
+-------
+www.domain1.com
+www.domain2.com
+
+Database
+--------
+www/dummy.db
+
+Flask app
+---------
+dummy/dummy/app.py: Common models/views/factories
+dummy/dummy/config_base.py: Common class that will be subclassed on different domains
+
+
