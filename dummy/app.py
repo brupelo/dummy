@@ -4,16 +4,13 @@ from flask import Flask
 from flask import request
 from flask_sqlalchemy import SQLAlchemy
 
-
-# -------- App+Db --------
-def db_instance(app):
-    db_path = Path(__file__).parent / "../www/dummy.db"
-    return SQLAlchemy(app)
-
+db = SQLAlchemy()
 
 def create_app(name, config):
     app = Flask(name)
     app.config.update(config.db_config)
+
+    db.init_app(app)
     return app
 
 
