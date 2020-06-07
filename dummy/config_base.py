@@ -5,7 +5,6 @@ from pathlib import Path
 
 class ConfigBase(object):
     def __init__(self, db_path, debug=True):
-        self.db_path = Path(db_path).resolve()
         self.db_config = {
             "SQLALCHEMY_DATABASE_URI": f"sqlite:///{self.db_path}",
             "SQLALCHEMY_TRACK_MODIFICATIONS": False,
